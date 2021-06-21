@@ -23,7 +23,7 @@ def main():
         test_data=open(session["filename"],"r").read()
         my_path=os.path.dirname(__file__)
         os.remove(os.path.join(my_path, session["filename"]))
-    data1 = json.dumps([{"Input text":test_data},
+        data1 = json.dumps([{"Input text":test_data},
                     {"flesch_reading_ease ":textstat.flesch_reading_ease(test_data)},
                     {"smog_index ":textstat.smog_index(test_data)},
                     {"flesch_kincaid_grade ":textstat.flesch_kincaid_grade(test_data)},
@@ -37,7 +37,5 @@ def main():
                     {"fernandez_huerta ":textstat.fernandez_huerta(test_data)},
                     {"szigriszt_pazos ":textstat.szigriszt_pazos(test_data)},
                     {"gutierrez_polini ":textstat.gutierrez_polini(test_data)},
-                    {"crawford ":textstat.crawford(test_data)}],intents=2)
+                    {"crawford ":textstat.crawford(test_data)}],indent=1)
     return data1
-if __name__ == '__main__':
-    app.run(debug=True)
