@@ -3,4 +3,3 @@ requests
 gunicorn
 werkzeug
 textstat
-json
